@@ -29,11 +29,6 @@ var
       // deregister the cancel timeout so subsequent cancels are scheduled
       player.ads.cancelPlayTimeout = null;
 
-      // pause playback so ads can be handled.
-      if (!player.paused()) {
-        player.pause();
-      }
-
       // add a contentplayback handler to resume playback when ads finish.
       player.one('contentplayback', function() {
         if (player.paused()) {
